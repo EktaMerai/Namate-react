@@ -1,0 +1,4 @@
+/node_modules
+/dist
+.parcel-cache
+dist/index.9e4c6fd2.css.map
