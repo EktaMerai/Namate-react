@@ -1,6 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+/**
+ * Header
+ *  - Logo
+ *  - Nav item
+ * Body
+ *  - Search
+ *  - ResturentContainer
+ *      - ResturantCard
+ *          -IMG
+ *          - Name of res,star,
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ * 
+ * 
+ */
 // const parent = React.createElement("div",{id:"parent"},[
 // React.createElement("div",{id: "child"},[
 //     React.createElement("h1",{},"This is namaste react"),
@@ -22,8 +40,8 @@ import ReactDOM from "react-dom/client";
 
 //jsx : it's like HTML or XML
 //React Element
-const jsxheading = (
-<h1 id="heading">Namste react using jsx</h1>
+// const jsxheading = (
+{/* <h1 id="heading">Namste react using jsx</h1>
 )
 
 //React component
@@ -40,10 +58,118 @@ const HeadingComponet = () => (
     {total}
     <h1>My Functional base componet</h1>
     </div>
-)
+) */}
 //React Functional componet
+const Header = () => {
+    return(
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://cdn.dotpe.in/logo/10090/ENT00316.png" />
+            </div>
+            <div className="nav-item">
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Conatct Us</li>
+                    <li>Cart</li>
+                </ul>
+
+            </div>
+        </div>
+    )
+}
+
+const resList = 
+    [
+        {
+          "restaurantName": "The Cheese Cake Factory",
+          "items": [
+            {
+              "itemId": "595184df77c826cc6f223f9d",
+              "itemName": "CAESAR SALAD",
+              "price": 7.99,
+              "category": "salads",
+              "active": true,
+              "favorites": false
+            },
+            {
+              "itemId": "595184df77c826cc6f223f9e",
+              "itemName": "LUNCH CHICKEN SPECIALS",
+              "price": 11.99,
+              "category": "lunch specials",
+              "active": true,
+              "favorites": false
+            }
+          ]
+        },
+        {
+          "restaurantName": "California Pizza Kitchen",
+          "items": [
+            {
+              "itemId": "595184df77c826cc6f223f9f",
+              "itemName": "ASPARAGUS + ARUGULA SALAD",
+              "price": 7.99,
+              "category": "small plates",
+              "active": true,
+              "favorites": false
+            },
+            {
+              "itemId": "595184df77c826cc6f223fa0",
+              "itemName": "LETTUCE WRAPS",
+              "price": 11.99,
+              "category": "appetizers",
+              "active": true,
+              "favorites": false
+            },
+            {
+              "itemId": "595184df77c826cc6f223fa1",
+              "itemName": "CRISPY FISH TACOS",
+              "price": 13.99,
+              "category": "main plates",
+              "active": true,
+              "favorites": false
+            }
+          ]
+        }
+      ]
+
+
+const ResturantCard = (props) => {
+    console.log(props)
+    
+    return(
+        <div className="restro-card">
+            <img about="res" src="https://meghanafoods.co.in/photo/Chicken%20curry%20with%20bone.jpg" />
+            <h3>{props.resData.restaurantName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>4.4 start</h4>
+            <h4>38 mintues</h4>
+        </div>
+    )
+}
+const Body = () => {
+    return (
+        <div className="body"> 
+            <div className="search">
+                Search
+            </div>
+            <div className="restro-conatiner">
+                {/* <ResturantCard resList={resList}></ResturantCard> */}
+                {resList.map((restaurant,index) => (<ResturantCard resData={restaurant} key={index}></ResturantCard>))}
+            </div>
+        </div>
+    )
+}
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header></Header>
+            <Body></Body>
+        </div>
+    )
+}
 
 
 
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
-root1.render(<HeadingComponet />);
+root1.render(<AppLayout />);

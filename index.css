@@ -1,3 +1,44 @@
 #heading {
     color:brown;
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #014719;
+    align-items: center;
+    box-shadow:
+    0 -3em 10em 9px #00c8004d, 0 0 0 2px #fff, 0.3em 0.3em 1em #c86100dd
+}
+.logo{
+    width: 9rem;
+    height: 9rem;
+}
+.nav-item > ul {
+    display: flex;
+}
+.nav-item > ul > li {
+    padding: 1rem;
+    list-style: none;
+}
+.restro-card {
+    width: 12rem;
+    height: auto;
+    border: 1px solid #000;
+    padding: 2rem;
+}
+.restro-card:hover {
+    border: 3px solid #000;
+}
+.restro-card img{
+    width: 12rem;
+    height: 10rem;
+}
+.search{
+    padding: 2rem;
+}
+.restro-conatiner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem;
+}
