@@ -19,3 +19,24 @@
     - go to parceljs.org
     - different dev and prod bundle
     -  
+
+# foodorderapp
+<!-- 
+/**
+ * Header
+ *  - Logo
+ *  - Nav item
+ * Body
+ *  - Search
+ *  - ResturentContainer
+ *      - ResturantCard
+ *          -IMG
+ *          - Name of res,star,
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ * 
+ * 
+ */ -->
